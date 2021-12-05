@@ -1,9 +1,9 @@
 const { urlencoded } = require('express');
 const express = require('express');
-const app = express()
+const app = express() 
 
 app.use(urlencoded({extended: true}))
-app.use(express.json())
+app.use(express.json()) //when you send data through post method
 
 //app.listen(port, function() {console.log(Example app listening at port 3000')}
 // Used Below Arrow Function =>
@@ -32,7 +32,7 @@ app.get('/', function (req, res) {
         }
     ])
 })
-app.post('/about', function (req, res) {
+app.post('/about', (req, res) => {
     console.log(req.body);
     res.send({msg: "Ok"})
   })
